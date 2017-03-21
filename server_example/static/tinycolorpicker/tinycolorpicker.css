@@ -1,0 +1,44 @@
+.colorPicker
+{
+    width:          220px;
+    height:         220px;
+    position: relative;
+    clear: both;
+    margin: 50px auto 20px;
+    border-radius: 50%;
+    border: 4px solid #ccc;
+}
+
+.colorPicker .track {
+    background:     url(images/wheel.png) no-repeat;
+    height:         200px;
+    width:          200px;
+    padding:        0px;
+    position:       absolute;
+    cursor:         crosshair;
+    float:          left;
+    left:           5px;
+    top:            5px;
+    display:        none;
+    border:         1px solid #ccc;
+    z-index:        10;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+    border-radius: 200px;
+}
+
+.colorPicker .dropdown {
+    list-style: none;
+    display: none;
+    width: 27px;
+    position: absolute;
+    top: 28px;
+    border: 1px solid #ccc;
+    left: 0;
+    z-index: 1000;
+}
+
+.colorPicker .dropdown li{
+    height: 25px;
+    cursor: pointer;
+}

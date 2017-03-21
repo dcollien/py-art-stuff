@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=500, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation-flex.min.css">
+    <link rel="stylesheet" type="text/css" href="static/tinycolorpicker/tinycolorpicker.css">
+
+    <script src="https://cdn.rawgit.com/brython-dev/brython/3.3.1/www/src/brython.js"></script>
+    <script src="static/tinycolorpicker/tinycolorpicker.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        tinycolorpicker(document.getElementById('picker0'));
+        tinycolorpicker(document.getElementById('picker1'));
+      });
+    </script>
+    <style>
+      body {
+        padding: 20px;
+      }
+
+      .colour-row {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body onLoad="brython(1)">
+    <div class="container">
+      <div class="row">
+        <div class="small-6 colour-row">
+          <div id="picker0" class="colorPicker">
+            <div class="track"></div>
+            <ul class="dropdown"><li></li></ul>
+            <input type="hidden" class="colorInput" />
+          </div>
+        </div>
+        <div class="small-6 colour-row">
+          <div id="picker1" class="colorPicker">
+            <div class="track"></div>
+            <ul class="dropdown"><li></li></ul>
+            <input type="hidden" class="colorInput" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/python" src="static/client.py"></script>
+  </body>
+</html>
