@@ -1,6 +1,7 @@
 Uploading Micropython Firmware on ESP8266 chip:
 
 1. Buy a "Wemos" board from aliexpress.com for ~$4
+http://s.aliexpress.com/BnE7z6ZB
 
 2. Install any drivers required for the usb/serial (e.g. CH34X Wemos driver) - OSX is in this repo
 
