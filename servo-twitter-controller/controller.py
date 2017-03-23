@@ -39,10 +39,12 @@ class StdOutListener(StreamListener):
                 sentiment_buffer = sentiment_buffer[BUFF_SIZE - buffer_size:]
 
             avg_sentiment = sum(sentiment_buffer)/float(len(sentiment_buffer))
-            avg_sentiment *= 5
+
+            # normalise it to be between 0 and 1
             avg_sentiment += 1
             avg_sentiment /= 2.0
 
+            # just in case
             if avg_sentiment > 1:
                 avg_sentiment = 1
             elif avg_sentiment < 0:
