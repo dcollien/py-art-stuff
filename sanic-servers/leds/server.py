@@ -48,14 +48,14 @@ app.static('/static', './static')
 async def index(request):
     return await file('./static/index.html')
 
-@app.route('/leds-api', methods=['POST'])
-async def leds_api(request):
+@app.route('/ajax', methods=['POST'])
+async def ajax(request):
     data = request.json
     _process_data(data)
     return json({'leds': LEDS})
 
-@app.websocket('/leds')
-async def leds(request, ws):
+@app.websocket('/socket')
+async def socket(request, ws):
     socket_id = random_id()
     connections[socket_id] = ws
 
@@ -80,4 +80,4 @@ async def leds(request, ws):
             await ws.send(dumps(data))
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=8001)

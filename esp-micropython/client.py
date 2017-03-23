@@ -22,11 +22,11 @@ def connect_to_wifi(essid, password):
         wifi.connect(essid, password)
         while not wifi.isconnected():
             pass
-    a, b, c, d = wifi.ifconfig()
-    print(a ,b, c, d)
+    ip, subnet_mask, gateway, dns_server = wifi.ifconfig()
+    print(ip, subnet_mask, gateway, dns_server)
 
-    # Set the DNS Server
-    wifi.ifconfig((a, b, c, '8.8.8.8'))
+    # Set the DNS Server (optional)
+    wifi.ifconfig((ip, subnet_mask, gateway, '8.8.8.8'))
     print('Connected to', essid)
 
     return wifi
@@ -55,6 +55,7 @@ def start(essid, password, ws_uri, task):
 
         try:
             # connect to websocket
+            print('Connecting to', ws_uri)
             SOCKET = connect_to_websocket(ws_uri)
             is_open = True
         except Exception as err:
@@ -72,6 +73,7 @@ def start(essid, password, ws_uri, task):
             task(data)
 
         try:
-            SOCKET.close()
+            if SOCKET is not None:
+                SOCKET.close()
         except Exception as err:
             print('Unable to close', err)

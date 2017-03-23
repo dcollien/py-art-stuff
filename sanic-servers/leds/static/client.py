@@ -12,8 +12,8 @@ except ImportError:
 
 """ Constants """
 # How to connect to the server
-HTTP_URL = 'http://localhost:8000/leds-api'
-WS_URL = 'ws://localhost:8000/leds'
+HTTP_URL = 'http://pyleds.ngrok.io/ajax'
+WS_URL = 'ws://pyleds.ngrok.io/socket'
 
 # Start with this colour before connecting
 INIT_COLOUR = (255, 255, 255)

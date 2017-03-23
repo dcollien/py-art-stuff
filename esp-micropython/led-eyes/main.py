@@ -5,7 +5,7 @@ import client
 from neopixel import NeoPixel
 
 # Periodic tasks
-from machine import Timer
+from machine import Timer, Pin
 
 # The LEDs are controlled by one data wire on Pin 15
 # and there are 2 of them connected in the string:
@@ -14,11 +14,11 @@ NUM_LEDS = 2
 LEDS = NeoPixel(LED_CONTROL_PIN, NUM_LEDS)
 
 # Websocket URI to connect to
-WS_URI = 'ws://5e2c5840.ngrok.io:80/leds'
+WS_URI = 'ws://pyleds.ngrok.io:80/socket'
 
 # ESSID/Password for the wifi network
-ESSID = 'openlearning.com'
-PASSWORD = 'AbsurdCyclicDungeonPipe'
+ESSID = 'ssid'
+PASSWORD = 'password'
 
 # Write some RGB values to the LEDs
 def write_leds(rgb_vals):
